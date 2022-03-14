@@ -66,5 +66,27 @@ To define a model, we will use the model generator:
 bin/rails generate model Article title:string body:text
 ```
 
+## Database
+Migrations are used to alter the structure of an application's database.
+
+```bash
+bin/rails db:migrate
+```
+
+### Interact with database
+
+```base
+bin/rails console
+```
+
+```
+> article = Article.new(title: "Hello Rails", body: "I am on Rails!")
+> article.save
+> article
+
+> Article.find(1)
+> Article.all
+```
+
 ## References
 - [Getting Started with Rails](https://guides.rubyonrails.org/getting_started.html)
