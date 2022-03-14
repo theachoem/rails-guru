@@ -1,30 +1,3 @@
-<!--
-# DEFAULT README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
- -->
-
 # Ruby on Rails Guru
 
 ## Installation
@@ -34,7 +7,7 @@ Before you install Rails, you should check to make sure that your system has the
 - Node.js
 - Yarn
 
-```
+```shell
 ruby --version
 sqlite3 --version
 node --version
@@ -45,14 +18,14 @@ rails --version
 ```
 
 ## Creating the Blog Application
-```
+```shell
 rails new blog
 ```
 
 ## Hello, Rails!
 We actually have a functional Rails application already. To see it, we need to start a web server on your development machine.
 
-```bash
+```shell
 # mac, linux
 bin/rails server
 
@@ -62,20 +35,20 @@ ruby bin\rails server
 
 ## Generation
 To define a model, we will use the model generator:
-```
+```shell
 bin/rails generate model Article title:string body:text
 ```
 
 ## Database
 Migrations are used to alter the structure of an application's database.
 
-```bash
+```shell
 bin/rails db:migrate
 ```
 
 ### Interact with database
 
-```base
+```shell
 bin/rails console
 ```
 
@@ -88,5 +61,18 @@ bin/rails console
 > Article.all
 ```
 
+## Migrate to PostgreSQL
+1. Install PostgreSQL `gem install postgresql`
+2. Update to `gem "pg"` in Gemfile
+3. Change adapter to postgresql in `database.yml`
+4. Install [PostgreSQL app](https://postgresapp.com/downloads.html)
+5. Run following commands:
+```shell
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake db:seed
+```
+
 ## References
 - [Getting Started with Rails](https://guides.rubyonrails.org/getting_started.html)
+- [Migrate to PostgreSQL](https://medium.com/@virtual_khan/converting-rails-from-sqlite3-to-postgresql-d97023314a14)
