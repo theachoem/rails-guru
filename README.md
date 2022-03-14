@@ -60,5 +60,11 @@ bin/rails server
 ruby bin\rails server
 ```
 
+## Generation
+To define a model, we will use the model generator:
+```
+bin/rails generate model Article title:string body:text
+```
+
 ## References
 - [Getting Started with Rails](https://guides.rubyonrails.org/getting_started.html)
