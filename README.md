@@ -32,6 +32,7 @@ bin/rails server
 # window
 ruby bin\rails server
 ```
+Make sure you have all required files & folders in [app/assets/config/manifest.js](app/assets/config/manifest.js).
 
 ## Generation
 To define a model, we will use the model generator:
